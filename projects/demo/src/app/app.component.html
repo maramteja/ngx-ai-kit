@@ -92,9 +92,11 @@
             [config]="autocompleteConfig"
             (suggestionSelected)="onSuggestionSelected($event)"
           />
-          <p class="demo-value" *ngIf="autocompleteValue">
-            Value: <code>{{ autocompleteValue }}</code>
-          </p>
+          @if (autocompleteValue) {
+            <p class="demo-value">
+              Value: <code>{{ autocompleteValue }}</code>
+            </p>
+          }
         </div>
       </div>
 

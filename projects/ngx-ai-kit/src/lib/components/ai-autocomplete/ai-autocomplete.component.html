@@ -1,0 +1,40 @@
+<div class="ngx-autocomplete">
+  <label *ngIf="label" class="ngx-autocomplete__label">{{ label }}</label>
+
+  <div class="ngx-autocomplete__field">
+    <input
+      class="ngx-autocomplete__input"
+      type="text"
+      [value]="value"
+      [placeholder]="placeholder"
+      (input)="onInput($any($event.target).value)"
+      (keydown)="onKeydown($event)"
+      (blur)="onBlur()"
+      autocomplete="off"
+    />
+    <span class="ngx-autocomplete__spinner" *ngIf="isLoading">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5">
+        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+      </svg>
+    </span>
+  </div>
+
+  <ul
+    class="ngx-autocomplete__dropdown"
+    *ngIf="showDropdown && suggestions.length"
+    role="listbox"
+  >
+    <li
+      *ngFor="let s of suggestions; let i = index"
+      class="ngx-autocomplete__option"
+      [class.ngx-autocomplete__option--active]="i === activeIndex"
+      (mousedown)="selectSuggestion(s)"
+      role="option"
+    >
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;opacity:0.5">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      {{ s }}
+    </li>
+  </ul>
+</div>

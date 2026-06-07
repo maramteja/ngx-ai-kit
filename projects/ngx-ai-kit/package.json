@@ -1,0 +1,32 @@
+{
+  "name": "ngx-ai-kit",
+  "version": "1.0.0",
+  "description": "Angular AI component library — chat widget, AI autocomplete & streaming text for any LLM backend",
+  "keywords": [
+    "angular",
+    "ai",
+    "chat",
+    "llm",
+    "streaming",
+    "autocomplete",
+    "openai",
+    "anthropic",
+    "claude",
+    "ngx"
+  ],
+  "author": {
+    "name": "Teja Maram",
+    "url": "https://github.com/maramteja"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maramteja/ngx-ai-kit"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0",
+    "@angular/forms": ">=17.0.0",
+    "rxjs": ">=7.0.0"
+  }
+}

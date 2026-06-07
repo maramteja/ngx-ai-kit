@@ -1,0 +1,31 @@
+{
+  "name": "ngx-ai-kit-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "ng build ngx-ai-kit",
+    "build:watch": "ng build ngx-ai-kit --watch",
+    "test": "ng test ngx-ai-kit",
+    "lint": "ng lint",
+    "publish:lib": "npm run build && cd dist/ngx-ai-kit && npm publish --access public"
+  },
+  "dependencies": {
+    "@angular/animations": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular/cli": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "ng-packagr": "^17.0.0",
+    "typescript": "~5.2.2"
+  }
+}

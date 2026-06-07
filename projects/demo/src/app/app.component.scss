@@ -1,0 +1,406 @@
+// ─── Hero ──────────────────────────────────────────────────────────────────────
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 24px 80px;
+  overflow: hidden;
+
+  &__glow {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-light);
+    margin-bottom: 28px;
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  &__badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--success);
+    animation: pulse 2s infinite;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+  }
+
+  &__title-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__subtitle {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+  }
+
+  &__install {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    color: var(--accent-light);
+    user-select: all;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+  }
+
+  &__github {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: border-color 0.2s, background 0.2s;
+
+    &:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+    }
+  }
+}
+
+// ─── Features ──────────────────────────────────────────────────────────────────
+.features {
+  padding: 0 24px 80px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: transform 0.25s ease, border-color 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-accent);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.08);
+  }
+
+  &__icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+
+  &__desc {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+}
+
+// ─── Section Header ────────────────────────────────────────────────────────────
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+
+  &__tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-light);
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  &__desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// ─── Demo Section ──────────────────────────────────────────────────────────────
+.demo-section {
+  padding: 0 24px 100px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+
+  @media (max-width: 820px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.demo-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.demo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: var(--border-accent);
+  }
+
+  &__header {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    color: var(--text-secondary);
+  }
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
+
+  &__body {
+    padding: 20px;
+
+    &--streaming {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      min-height: 80px;
+    }
+  }
+
+  // Override library chat-widget styles to fit dark theme
+  ::ng-deep .ngx-chat-widget {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-subtle) !important;
+    border-radius: 10px !important;
+  }
+
+  ::ng-deep .ngx-chat-header {
+    background: var(--bg-card) !important;
+    border-bottom-color: var(--border-subtle) !important;
+  }
+
+  ::ng-deep .ngx-chat-header__title {
+    color: var(--text-primary) !important;
+  }
+
+  ::ng-deep .ngx-chat-header__clear {
+    color: var(--text-muted) !important;
+    &:hover {
+      color: var(--text-primary) !important;
+      background: rgba(255, 255, 255, 0.06) !important;
+    }
+  }
+
+  ::ng-deep .ngx-chat-messages {
+    background: var(--bg-secondary);
+  }
+
+  ::ng-deep .ngx-chat-message--assistant .ngx-chat-bubble {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+  }
+
+  ::ng-deep .ngx-chat-time {
+    color: var(--text-muted) !important;
+  }
+
+  ::ng-deep .ngx-chat-input-row {
+    background: var(--bg-secondary) !important;
+    border-top-color: var(--border-subtle) !important;
+  }
+
+  ::ng-deep .ngx-chat-input {
+    background: var(--bg-card) !important;
+    border-color: var(--border-subtle) !important;
+    color: var(--text-primary) !important;
+
+    &:focus {
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 0 3px var(--accent-glow) !important;
+    }
+
+    &::placeholder {
+      color: var(--text-muted) !important;
+    }
+  }
+
+  // Override autocomplete styles for dark theme
+  ::ng-deep .ngx-autocomplete__label {
+    color: var(--text-secondary) !important;
+  }
+
+  ::ng-deep .ngx-autocomplete__input {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-subtle) !important;
+    color: var(--text-primary) !important;
+
+    &:focus {
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 0 3px var(--accent-glow) !important;
+    }
+
+    &::placeholder {
+      color: var(--text-muted) !important;
+    }
+  }
+
+  ::ng-deep .ngx-autocomplete__dropdown {
+    background: var(--bg-card) !important;
+    border-color: var(--border-subtle) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  ::ng-deep .ngx-autocomplete__option {
+    color: var(--text-secondary) !important;
+
+    &:hover,
+    &--active {
+      background: rgba(99, 102, 241, 0.1) !important;
+      color: var(--accent-light) !important;
+    }
+  }
+
+  // Override streaming text
+  ::ng-deep .ngx-streaming-text {
+    color: var(--text-secondary) !important;
+  }
+}
+
+.demo-value {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+
+  code {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--accent-light);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+}
+
+// ─── Footer ────────────────────────────────────────────────────────────────────
+.footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+// ─── Animations ────────────────────────────────────────────────────────────────
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

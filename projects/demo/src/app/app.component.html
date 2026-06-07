@@ -1,0 +1,122 @@
+<!-- Hero Section -->
+<header class="hero">
+  <div class="hero__glow"></div>
+  <div class="hero__content">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      Open Source Angular Library
+    </div>
+    <h1 class="hero__title">
+      <span class="hero__title-gradient">ngx-ai-kit</span>
+    </h1>
+    <p class="hero__subtitle">
+      Drop-in AI components for Angular — chat widget, autocomplete &amp; streaming text.
+      <br>Works with any LLM backend.
+    </p>
+    <div class="hero__actions">
+      <code class="hero__install">npm install ngx-ai-kit</code>
+      <a href="https://github.com/maramteja/ngx-ai-kit" target="_blank" rel="noopener" class="hero__github">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Features Strip -->
+<section class="features">
+  <div class="features__grid">
+    <div class="feature-card">
+      <div class="feature-card__icon">💬</div>
+      <h3 class="feature-card__title">Chat Widget</h3>
+      <p class="feature-card__desc">Full-featured streaming chat UI with auto-scroll, message history, and welcome messages.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-card__icon">⚡</div>
+      <h3 class="feature-card__title">AI Autocomplete</h3>
+      <p class="feature-card__desc">Debounced AI suggestions with keyboard navigation. Reactive Forms compatible (CVA).</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-card__icon">✨</div>
+      <h3 class="feature-card__title">Streaming Text</h3>
+      <p class="feature-card__desc">Inline streaming text with a blinking cursor. Perfect for generative content.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Live Demo Section -->
+<section class="demo-section" id="demo">
+  <div class="section-header">
+    <span class="section-header__tag">Live Demo</span>
+    <h2 class="section-header__title">See it in action</h2>
+    <p class="section-header__desc">
+      These are the actual library components rendered live.
+      Connect a backend proxy to interact with a real LLM.
+    </p>
+  </div>
+
+  <div class="demo-grid">
+    <!-- Chat Widget Demo -->
+    <div class="demo-card demo-card--chat">
+      <div class="demo-card__header">
+        <div class="demo-card__label">
+          <span class="demo-card__dot"></span>
+          &lt;ngx-chat-widget&gt;
+        </div>
+      </div>
+      <div class="demo-card__body">
+        <ngx-chat-widget
+          [config]="chatConfig"
+          systemPrompt="You are a helpful assistant. Be concise."
+        />
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="demo-column">
+      <!-- Autocomplete Demo -->
+      <div class="demo-card">
+        <div class="demo-card__header">
+          <div class="demo-card__label">
+            <span class="demo-card__dot"></span>
+            &lt;ngx-ai-autocomplete&gt;
+          </div>
+        </div>
+        <div class="demo-card__body">
+          <ngx-ai-autocomplete
+            [(ngModel)]="autocompleteValue"
+            label="Search products"
+            context="We sell developer tools and SaaS software"
+            [config]="autocompleteConfig"
+            (suggestionSelected)="onSuggestionSelected($event)"
+          />
+          <p class="demo-value" *ngIf="autocompleteValue">
+            Value: <code>{{ autocompleteValue }}</code>
+          </p>
+        </div>
+      </div>
+
+      <!-- Streaming Text Demo -->
+      <div class="demo-card">
+        <div class="demo-card__header">
+          <div class="demo-card__label">
+            <span class="demo-card__dot"></span>
+            &lt;ngx-streaming-text&gt;
+          </div>
+        </div>
+        <div class="demo-card__body demo-card__body--streaming">
+          <ngx-streaming-text
+            prompt="Write one sentence explaining why Angular is great for enterprise apps."
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Built by <a href="https://github.com/maramteja" target="_blank" rel="noopener">Teja Maram</a> · MIT License</p>
+</footer>
